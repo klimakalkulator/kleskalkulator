@@ -68,7 +68,7 @@ document.getElementById('calcForm').addEventListener('submit', function(e) {
   `;
 
   // Send data to Google Sheets
-  fetch("https://script.google.com/macros/s/AKfycbwQy1wP0zu-NLG9bvVtS94-pR47tJI7SqAG0s9x_fqAUrX8xd0p6t7C0QOt-HoKRyDS/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbzaPDmEY4bjnPD_MS-docXILZtauWqtk7VTcAfeEMznpxHpNQEX6dkrVpU8ZSYYCQpj/exec", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
