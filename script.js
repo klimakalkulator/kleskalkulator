@@ -1,4 +1,3 @@
-
 document.getElementById('calcForm').addEventListener('submit', function(e) {
   e.preventDefault();
 
@@ -67,28 +66,29 @@ document.getElementById('calcForm').addEventListener('submit', function(e) {
     <ul>${comparison}</ul>
     <p>Takk for at du deltok. Dataene dine lagres anonymt.</p>
   `;
+
   // Send data to Google Sheets
-fetch("https://script.google.com/macros/s/AKfycbwQy1wP0zu-NLG9bvVtS94-pR47tJI7SqAG0s9x_fqAUrX8xd0p6t7C0QOt-HoKRyDS/exec", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({
-    type,
-    material,
-    quantity,
-    source,
-    age,
-    gender,
-    co2: totalco2,
-    water: totalwater,
-    decay: breakdown
+  fetch("https://script.google.com/macros/s/AKfycbwQy1wP0zu-NLG9bvVtS94-pR47tJI7SqAG0s9x_fqAUrX8xd0p6t7C0QOt-HoKRyDS/exec", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      type,
+      material,
+      quantity,
+      source,
+      age,
+      gender,
+      co2,
+      water: totalWater,
+      decay: breakdown
+    })
   })
-})
-.then(response => {
-  if (!response.ok) {
-    console.error("Data not saved:", response.statusText);
-  }
-})
-.catch(error => console.error("Fetch error:", error));
+  .then(response => {
+    if (!response.ok) {
+      console.error("Data not saved:", response.statusText);
+    }
+  })
+  .catch(error => console.error("Fetch error:", error));
 });
