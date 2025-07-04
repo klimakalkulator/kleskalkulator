@@ -68,27 +68,26 @@ document.getElementById('calcForm').addEventListener('submit', function(e) {
   `;
 
   // Send data to Google Sheets
-  fetch("https://kleskalkulator-vkykcikmp-kalkulators-projects.vercel.app", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      type,
-      material,
-      quantity,
-      source,
-      age,
-      gender,
-      co2,
-      water: totalWater,
-      decay: breakdown
-    })
+fetch("https://kleskalkulator-vkykcikmp-kalkulators-projects.vercel.app/api", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    type,
+    material,
+    quantity,
+    source,
+    age,
+    gender,
+    co2,
+    water: totalWater,
+    decay: breakdown
   })
-  .then(response => {
-    if (!response.ok) {
-      console.error("Data not saved:", response.statusText);
-    }
-  })
-  .catch(error => console.error("Fetch error:", error));
-});
+})
+.then(response => {
+  if (!response.ok) {
+    console.error("Data not saved:", response.statusText);
+  }
+})
+.catch(error => console.error("Fetch error:", error));
