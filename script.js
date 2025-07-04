@@ -91,3 +91,4 @@ fetch("https://kleskalkulator-vkykcikmp-kalkulators-projects.vercel.app/api", {
   }
 })
 .catch(error => console.error("Fetch error:", error));
+});
