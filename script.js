@@ -68,7 +68,7 @@ document.getElementById('calcForm').addEventListener('submit', function(e) {
   `;
 
   // Send data to Google Sheets
-  fetch("https://script.google.com/macros/s/AKfycbzaPDmEY4bjnPD_MS-docXILZtauWqtk7VTcAfeEMznpxHpNQEX6dkrVpU8ZSYYCQpj/exec", {
+  fetch("https://kleskalkulator-vkykcikmp-kalkulators-projects.vercel.app", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
